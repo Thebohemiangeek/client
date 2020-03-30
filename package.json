@@ -26,8 +26,7 @@
     "eject": "react-scripts eject",
     "flow": "flow",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "precommit": "lint-staged"
+    "lint:fix": "eslint . --fix"
   },
   "husky": {
     "hooks": {
