@@ -42,7 +42,7 @@ function useGettingMarkdown(markdownName) {
         setContent(markdown);
       } catch (e) {
         setStatus(LOAD_STATUS.FAIL);
-        console.error(e);
+        // console.error(e);
       }
     }
 

@@ -1,7 +1,20 @@
 {
   "parser": "babel-eslint",
-  "extends": ["airbnb", "plugin:import/errors", "plugin:import/warnings"],
-  "plugins": ["babel", "import", "react"],
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/strict",
+    "plugin:prettier/recommended",
+    "prettier/react"
+  ],
+  "plugins": [
+    "babel",
+    "import",
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+    "prettier"
+  ],
   "env": {
     "es6": true,
     "browser": true,
@@ -10,7 +23,12 @@
   },
   "parserOptions": {
     "ecmaVersion": 6,
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true,
+      "experimentalObjectRestSpread": true
+    }
   },
   "settings": {
     "import/resolver": {
@@ -19,7 +37,17 @@
       }
     }
   },
+  "globals": {
+    "window": true,
+    "document": true,
+    "localStorage": true,
+    "FormData": true,
+    "FileReader": true,
+    "Blob": true,
+    "navigator": true
+  },
   "rules": {
+    "prettier/prettier": ["error"],
     "no-param-reassign": 0,
     "no-shadow": 1,
     "one-var": [2, { "var": "always" }],
@@ -56,6 +84,7 @@
     "no-return-assign": 0,
     "import/default": 0,
     "react/jsx-props-no-spreading": 0,
-    "arrow-parens": 0
+    "consistent-return": 0
+    // "arrow-parens": 0
   }
 }

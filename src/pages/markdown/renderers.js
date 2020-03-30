@@ -9,7 +9,7 @@ function flatten(text, child) {
 }
 
 export function HeadingRenderer(props) {
-  console.log(props);
+  // console.log(props);
   const children = React.Children.toArray(props.children);
   const text = children.reduce(flatten, '');
   const slug = text.toLowerCase().replace(/\W/g, '-');
