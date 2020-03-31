@@ -1,7 +1,7 @@
 // @flow
 import React, { useState, useEffect } from 'react';
 import _ from 'lodash';
-import { useHistory, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   Container,
   Button,
@@ -33,7 +33,6 @@ const CountryPage = props => {
     },
     dispatch,
   ] = useStateContext();
-  const history = useHistory();
 
   useEffect(() => {
     if (!name) fetchCountryById(dispatch, countryId);
@@ -49,9 +48,7 @@ const CountryPage = props => {
     fetchGroups();
   }, [countryId, dispatch, name]);
 
-  const handleGroupClicked = groupId => {
-    history.push(`/group/${groupId}`);
-  };
+  const getGroupURL = groupId => `/group/${groupId}`;
 
   const countryName = name || (activeCountry && activeCountry.name);
   const groupList = groups.byCountryId[countryId];
@@ -78,10 +75,7 @@ const CountryPage = props => {
           {_.isEmpty(groupList) ? (
             <Header as="h2">There are no groups for this country.</Header>
           ) : (
-            <GroupList
-              groupList={groupList}
-              handleGroupClicked={handleGroupClicked}
-            />
+            <GroupList groupList={groupList} getGroupURL={getGroupURL} />
           )}
         </>
       )}
