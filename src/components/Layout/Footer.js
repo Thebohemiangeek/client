@@ -128,6 +128,22 @@ const Footer = () => {
                       </a>
                     </List.Content>
                   </List.Item>
+                  <List.Item>
+                    <List.Icon name="facebook" size="large" />
+                    <List.Content verticalAlign="middle">
+                      <a href="https://www.facebook.com/civictechhub">
+                        Facebook
+                      </a>
+                    </List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Icon name="linkedin" size="large" />
+                    <List.Content verticalAlign="middle">
+                      <a href="https://www.linkedin.com/company/civictechhub">
+                        Linkedin
+                      </a>
+                    </List.Content>
+                  </List.Item>
                 </List>
               </Grid.Column>
             </Grid.Row>
