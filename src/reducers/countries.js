@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { merge } from 'lodash';
 import { FETCH_COUNTRIES, FETCH_COUNTRY_BY_ID } from '../actions/types';
 
 export const INITIAL_STATE = {
@@ -10,7 +10,7 @@ export const INITIAL_STATE = {
 const countriesReducer = (state, action) => {
   switch (action.type) {
     case FETCH_COUNTRIES:
-      return _.merge(state.countries, action.value);
+      return merge(state.countries, action.value);
     case FETCH_COUNTRY_BY_ID:
       return {
         ...state,

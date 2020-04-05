@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { merge } from 'lodash';
 import { FETCH_GROUPS_BY_COUNTRY, FETCH_GROUP_BY_ID } from '../actions/types';
 
 export const INITIAL_STATE = {
@@ -14,7 +14,7 @@ const groupsReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         [group.id]: group,
-        byCountryId: _.merge(state.byCountryId, group),
+        byCountryId: merge(state.byCountryId, group),
       };
     default:
       return state;
