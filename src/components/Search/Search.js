@@ -1,7 +1,7 @@
 // @flow
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import _ from 'lodash';
+import debounce from 'lodash/debounce';
 import { Menu, Search as SearchElement, Responsive } from 'semantic-ui-react';
 import { useStateContext } from '../../state';
 import { handleSearchChange } from '../../actions/dispatchers';
@@ -35,7 +35,7 @@ const Search = () => {
         loading={isLoading}
         onResultSelect={handleResultSelect}
         minCharacters={2}
-        onSearchChange={_.debounce(
+        onSearchChange={debounce(
           e => {
             setIsLoading(true);
             handleSearchChange(dispatch, e.target.value).then(() => {
