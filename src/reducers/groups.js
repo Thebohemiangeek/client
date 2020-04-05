@@ -1,4 +1,4 @@
-import { merge } from 'lodash';
+import merge from 'lodash/merge';
 import { FETCH_GROUPS_BY_COUNTRY, FETCH_GROUP_BY_ID } from '../actions/types';
 
 export const INITIAL_STATE = {

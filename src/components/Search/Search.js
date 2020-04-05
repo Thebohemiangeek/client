@@ -1,7 +1,7 @@
 // @flow
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { debounce } from 'lodash';
+import debounce from 'lodash/debounce';
 import { Menu, Search as SearchElement, Responsive } from 'semantic-ui-react';
 import { useStateContext } from '../../state';
 import { handleSearchChange } from '../../actions/dispatchers';

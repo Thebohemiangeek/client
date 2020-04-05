@@ -1,6 +1,6 @@
 // @flow
 import React, { useState, useEffect } from 'react';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash/isEmpty';
 import { useHistory, Link } from 'react-router-dom';
 import {
   Container,
