@@ -3,9 +3,9 @@ import React from 'react';
 // import logo from '../../images/logo.svg';
 import { withRouter } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
-
-import Header from './Header';
-import Footer from './Footer';
+import Navbar from './Navbar/Navbar';
+/* import Header from './Header';
+ */ import Footer from './Footer';
 import { StateProvider } from '../../state';
 import mainReducer from '../../reducers';
 import initialState from '../../reducers/initialState';
@@ -48,7 +48,7 @@ const Layout = props => {
       <GlobalStyle />
 
       <StateProvider initialState={initialState} reducer={mainReducer}>
-        {props.location.pathname !== '/wirvsvirushack' && <Header />}
+        {props.location.pathname !== '/wirvsvirushack' && <Navbar />}
 
         <main>{children}</main>
 

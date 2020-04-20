@@ -5,12 +5,12 @@ import 'semantic-ui-css/semantic.min.css';
 
 import ScrollToTop from './components/ScrollToTop';
 import Layout from './components/Layout';
-import HomePage from './pages/home/HomePage';
-import CountryPage from './pages/country/CountryPage';
+/* import HomePage from './pages/home/HomePage';
+ */ import CountryPage from './pages/country/CountryPage';
 import GroupPage from './pages/group/GroupPage';
 import MarkdownPage from './pages/markdown/MarkdownPage';
 import NoMatch from './pages/404';
-
+import LandingPage from './pages/landing/LandingPage';
 // TODO: Remove this temporary page
 import WirvsvirushackPage from './pages/wirvsvirushack/WirvsvirushackPage';
 
@@ -20,7 +20,7 @@ function App() {
       <ScrollToTop />
       <Layout>
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/" component={LandingPage} />
           <Route
             exact
             path="/country/:countryId(\d+)"
