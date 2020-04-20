@@ -1,6 +1,6 @@
 // @flow
 import React, { useState, useEffect } from 'react';
-import _ from 'lodash';
+import isEmpty from 'lodash/isEmpty';
 import { useHistory, Link } from 'react-router-dom';
 import {
   Container,
@@ -69,13 +69,13 @@ const CountryPage = props => {
         <Header as="h1">{countryName || <Loader active inline />}</Header>
       </Segment>
 
-      {_.isEmpty(groupList) && isFetchingGroups ? (
+      {isEmpty(groupList) && isFetchingGroups ? (
         <Loader active inline="centered">
           Loading groups…
         </Loader>
       ) : (
         <>
-          {_.isEmpty(groupList) ? (
+          {isEmpty(groupList) ? (
             <Header as="h2">There are no groups for this country.</Header>
           ) : (
             <GroupList
